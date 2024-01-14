@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: 'Lexend Deca', sans-serif;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 140, 255, 1) 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 8px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 2rem;
+    flex-grow: 1;
+    padding: 8px;
+}
+
+.weather-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    gap: 0.5rem;    
+}
+
+.weather-form-input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    max-width: 200px;
+    min-width: 200px;
+    text-align: center;
+    background-color: rgba(219, 219, 219, 0.146);
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    font: 800 1rem 'Lexend Deca', sans-serif;
+}
+
+.weather-form-input::placeholder{
+    color: white;
+    opacity: 0.8;
+}
+
+.weather-form-submit {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    min-width: 100px;
+    background-color: #00a8ff;
+    color: white;   
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    font: 800 1rem 'Lexend Deca', sans-serif;
+}
+
+.weather-form-submit:hover {
+    background-color: white;
+    color: #00a8ff;
+    transition: ease-in-out 0.3s;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.result h2{
+    font-size: 7rem;
+    margin: 0;
+}
+
+.result-extra{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: auto;
+    background-color: rgba(219, 219, 219, 0.146);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.result-extra-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.result-extra-item h3{
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.result-extra-item p{
+    margin: 0;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    margin-top: 2rem;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 520px) {
+    .result-extra-item h3{
+        font-size: 1rem;
+    }
+    .result-extra-item p{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .weather-form {
+        flex-direction: column;
+        /* Otros estilos específicos para la dirección de columna en dispositivos pequeños... */
+    }
+
+    .result h2{
+        font-size: 6rem;
+    }
+
+    .weather-form-submit{
+        min-width: 218px;
+    }
+}
+
+
