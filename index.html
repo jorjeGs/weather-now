@@ -1,54 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☀️ Now</title>
+    <link rel="icon" type="image/svg" href="./icons/weather.svg" />
+    <title>WeatherNow</title>
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 
-<body>
+<body id="body">
     <header>
         <h1> Weather Now </h1>
-        <p>☀️ Search</p>
     </header>
     <main>
         <article class="weather-form">
-            <form action="search.php" method="get" class="weather-form">
-                <input class="weather-form-input" type="text" name="city" id="city" placeholder="Search by city">
+            <form id="weatherForm" class="weather-form">
+                <input class="weather-form-input" type="text" name="city" id="city" placeholder="Search by city" required>
                 <input class="weather-form-submit" type="submit" value="Search">
             </form>
         </article>
-        <article class="result">
-            <h2>18°C</h2>
-            <p><i>Cloudy</i></p>
+        <article id="resultWeather" class="result">
+            <h3 id="cityName">Ensenada</h3>
+            <h2 id="temp">18°C</h2>
+            <i><p id="weather">Cloudy</p></i>
         </article>
-        <article class="result-extra">
+        <article id="resultInfo" class="result-extra">
             <div class="result-extra-item">
-                <h3>10°C</h3>
+                <h3 id="feelsLike">10°C</h3>
                 <p>Feels Like</p>
             </div>
             <div class="result-extra-item">
-                <h3>80%</h3>
+                <h3 id="humidity">80%</h3>
                 <p>Humidity</p>
             </div>
             <div class="result-extra-item">
-                <h3>10km/h</h3>
+                <h3 id="wind">10km/h</h3>
                 <p>Wind</p>
             </div>
         </article>
-        <footer>
-            <p>Created by <a href="dasdas">Jorjito</a></p>
+        <footer id="footer">
+            <a href="https://jorgegarcia-portfolio.onrender.com" target="_blank" rel="noopener noreferrer" ><img src="./icons/info.svg" alt="info" id="info"></a>
+            <a href="https://github.com/jorjeGs" target="_blank" rel="noopener noreferrer" ><img src="./icons/github.svg" alt="github" id="github"></a>
+            <a href="https://www.linkedin.com/in/jorge-garcia-serrano-dev/" target="_blank" rel="noopener noreferrer" ><img src="./icons/linkedin.svg" alt="linkedin" id="linkedin"></a>
         </footer>
     </main>
 
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,32 @@
 body {
     margin: 0;
     font-family: 'Lexend Deca', sans-serif;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 140, 255, 1) 100%);
+    /* background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 140, 255, 1) 100%); */
+    background-image: url('../images/clear.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.187);
+    /*set transition for background image changing */
+    transition: ease-in-out 0.5s;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 h1 {
-    font-size: 3rem;
     margin: 0;
+    font: 800 3rem 'Lexend Deca', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    width: fit-content;
 }
 
 p {
@@ -31,7 +47,6 @@ main {
     display: flex;
     flex-direction: column;
     color: white;
-    margin-top: 2rem;
     flex-grow: 1;
     padding: 8px;
 }
@@ -52,7 +67,7 @@ main {
     max-width: 200px;
     min-width: 200px;
     text-align: center;
-    background-color: rgba(219, 219, 219, 0.146);
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     border: 1px solid white;
     outline: none;
@@ -71,23 +86,33 @@ main {
     outline: none;
     font-size: 1rem;
     min-width: 100px;
-    background-color: #00a8ff;
-    color: white;   
+    backdrop-filter: blur(10px);
+    background-color: white;
+    color: black; 
     cursor: pointer;
     transition: ease-in-out 0.3s;
     font: 800 1rem 'Lexend Deca', sans-serif;
 }
 
 .weather-form-submit:hover {
-    background-color: white;
-    color: #00a8ff;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;  
     transition: ease-in-out 0.3s;
 }
 
-.result{
-    display: flex;
+article.result{
+    display: none;
+    transition: ease-in-out 3s;
     flex-direction: column;
     margin-top: 2rem;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    /*set width to just the items*/
+    width: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .result h2{
@@ -95,14 +120,21 @@ main {
     margin: 0;
 }
 
+.result h3{
+    margin: 0;
+    font: 400 2rem 'Lexend Deca', sans-serif;
+}
+
 .result-extra{
-    display: flex;
+    display: none;
+    transition: ease-in-out 3s;
     flex-direction: row;
     align-self: center;
     justify-content: space-around;
     width: 80%;
     margin-top: auto;
-    background-color: rgba(219, 219, 219, 0.146);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);    
     padding: 1rem;
     border-radius: 0.5rem;
 }
@@ -125,17 +157,49 @@ main {
 
 footer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     color: white;
     padding: 8px;
-    margin-top: 2rem;
+    margin-top: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 0.5rem;
+    width: fit-content;
+    align-self: center;
 }
 
 footer a{
     color: white;
     text-decoration: none;
+}
+
+footer img{
+    margin: 0 0.5rem;
+    filter: invert(1);
+    transition: ease-in-out 0.3s;
+    object-fit: cover;
+}
+
+#linkedin{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#github{
+    width: 1.9rem;
+    height: 1.9rem;
+}
+
+#info{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+footer img:hover{
+    transform: scale(1.2);
+    transition: ease-in-out 0.3s;
 }
 
 @media (max-width: 520px) {
@@ -145,8 +209,10 @@ footer a{
     .result-extra-item p{
         font-size: 0.8rem;
     }
+    .result h2{
+        font-size: 4.5rem;
+    }
 }
-
 
 @media (max-width: 375px) {
     .weather-form {
@@ -154,13 +220,7 @@ footer a{
         /* Otros estilos específicos para la dirección de columna en dispositivos pequeños... */
     }
 
-    .result h2{
-        font-size: 6rem;
-    }
-
     .weather-form-submit{
         min-width: 218px;
     }
 }
-
-
