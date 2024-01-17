@@ -92,6 +92,10 @@ main {
     cursor: pointer;
     transition: ease-in-out 0.3s;
     font: 800 1rem 'Lexend Deca', sans-serif;
+    /*vertically align for svg*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .weather-form-submit:hover {
@@ -200,6 +204,24 @@ footer img{
 footer img:hover{
     transform: scale(1.2);
     transition: ease-in-out 0.3s;
+}
+
+.spinner{
+    animation-name: ckw;
+    animation: 0.7s linear infinite ckw;
+    transform-origin: 50% 50%;
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+@keyframes ckw {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 520px) {
