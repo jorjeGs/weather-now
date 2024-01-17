@@ -1,8 +1,6 @@
 body {
     margin: 0;
     font-family: 'Lexend Deca', sans-serif;
-    /* background: rgb(2, 0, 36);
-    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 140, 255, 1) 100%); */
     background-image: url('../images/clear.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -106,7 +104,6 @@ main {
 
 article.result{
     display: none;
-    transition: ease-in-out 3s;
     flex-direction: column;
     margin-top: 2rem;
     backdrop-filter: blur(10px);
@@ -117,6 +114,10 @@ article.result{
     width: fit-content;
     margin-top: auto;
     margin-bottom: auto;
+    /*animation control for appeareance when display changes using fadeing keyframe*/
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .result h2{
@@ -131,7 +132,6 @@ article.result{
 
 .result-extra{
     display: none;
-    transition: ease-in-out 3s;
     flex-direction: row;
     align-self: center;
     justify-content: space-around;
@@ -141,6 +141,17 @@ article.result{
     background-color: rgba(0, 0, 0, 0.3);    
     padding: 1rem;
     border-radius: 0.5rem;
+    /*animation control for appeareance when display changes using fadeing keyframe*/
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/*also for text children of result class*/
+.result.animate > * {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .result-extra-item{
@@ -151,8 +162,14 @@ article.result{
 }
 
 .result-extra-item h3{
-    font-size: 1.5rem;
     margin: 0;
+    font: 800 1.5rem 'Lexend Deca', sans-serif;
+}
+
+.result-extra-item.animate h3{
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .result-extra-item p{
@@ -213,6 +230,18 @@ footer img:hover{
     display: inline-block;
     width: 1.2rem;
     height: 1.2rem;
+}
+
+
+
+/*Keyframe animation for results with opacity*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes ckw {

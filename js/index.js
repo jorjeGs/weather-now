@@ -6,16 +6,29 @@ function handleSubmit(e) {
     document.getElementById("searchButton").innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="spinner" fill=white viewBox="0 0 512 512"><path d="M222.7 32.1c5 16.9-4.6 34.8-21.5 39.8C121.8 95.6 64 169.1 64 256c0 106 86 192 192 192s192-86 192-192c0-86.9-57.8-160.4-137.1-184.1c-16.9-5-26.6-22.9-21.5-39.8s22.9-26.6 39.8-21.5C434.9 42.1 512 140 512 256c0 141.4-114.6 256-256 256S0 397.4 0 256C0 140 77.1 42.1 182.9 10.6c16.9-5 34.8 4.6 39.8 21.5z"/></svg>`
     //also set the search button to disabled
     document.getElementById("searchButton").disabled = true;
+
+    //remove the class from the result to animate the old data
+    document.getElementById("resultWeather").classList.remove("animate");
+    //also result-extra
+    let elementos = document.querySelectorAll(".result-extra-item");
+    elementos.forEach(element => {
+        element.classList.remove("animate");
+    });
+
     //prevent default
     e.preventDefault();
+
     //get the input
     const city = document.getElementById("city").value;
+
     //url for API
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c7959b7dc8185bd8490e3e45d2f7cb61&units=metric`
+
     //fetch the data
     fetch(URL)
         .then(response => response.json())
         .then(data => {
+
             //make assurance that the city is valid
             if (data.cod == "404") {
                 //display error message function
@@ -29,7 +42,6 @@ function handleSubmit(e) {
             document.getElementById("searchButton").innerHTML = "Search";
             //also set the search button to enabled
             document.getElementById("searchButton").disabled = false;
-            
         })
         .catch(err => {
             alert("Network error");
@@ -47,6 +59,15 @@ function displayData(data) {
     const feelsLike = document.getElementById("feelsLike");
     const humidity = document.getElementById("humidity");
     const wind = document.getElementById("wind");
+
+    //remove the class from the result to animate the old data
+    document.getElementById("resultWeather").classList.add("animate");
+    //also result-extra
+    let elementos = document.querySelectorAll(".result-extra-item");
+    elementos.forEach(element => {
+        element.classList.add("animate");
+    });
+
     //display the data
     temp.innerText = data.main.temp + "°C";
     //capitalize the first letter
